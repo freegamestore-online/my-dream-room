@@ -1,14 +1,14 @@
 {
-  "name": "APPNAME",
+  "name": "my-dream-room",
   "private": true,
   "packageManager": "pnpm@10.30.3",
   "engines": { "node": ">=22" },
   "pnpm": { "onlyBuiltDependencies": ["esbuild"] },
   "scripts": {
-    "dev": "pnpm --filter @APPNAME/web dev",
-    "build": "pnpm --filter @APPNAME/web build",
-    "preview": "pnpm --filter @APPNAME/web preview",
-    "typecheck": "pnpm --filter @APPNAME/web exec tsc -b",
-    "test": "pnpm --filter @APPNAME/web test"
+    "dev": "pnpm --filter @my-dream-room/web dev",
+    "build": "pnpm --filter @my-dream-room/web build",
+    "preview": "pnpm --filter @my-dream-room/web preview",
+    "typecheck": "pnpm --filter @my-dream-room/web exec tsc -b",
+    "test": "pnpm --filter @my-dream-room/web test"
   }
 }
