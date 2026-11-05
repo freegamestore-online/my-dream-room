@@ -412,7 +412,6 @@ export function startGame(canvas: HTMLCanvasElement, onScore: (n: number) => voi
     const FLOOR_Y = VH - 185;
     const PANEL_Y = VH - 185;
     const PANEL_H = 185;
-    const ROOM_H  = PANEL_Y;
 
     // ── Background draw ───────────────────────────────────────────────────
     k.onDraw(() => {
@@ -630,7 +629,7 @@ export function startGame(canvas: HTMLCanvasElement, onScore: (n: number) => voi
     });
 
     // Touch support
-    k.onTouchStart((_id, touch) => {
+    k.onTouchStart((touch) => {
       const id = getCardAtPos(touch.x, touch.y);
       if (id) {
         const def = FURNITURE.find(f => f.id === id);
@@ -640,8 +639,8 @@ export function startGame(canvas: HTMLCanvasElement, onScore: (n: number) => voi
         dragging = true; dragDefId = id; dragX = touch.x; dragY = touch.y;
       }
     });
-    k.onTouchMove((_id, touch) => { if (dragging) { dragX = touch.x; dragY = touch.y; } });
-    k.onTouchEnd((_id, touch) => {
+    k.onTouchMove((touch) => { if (dragging) { dragX = touch.x; dragY = touch.y; } });
+    k.onTouchEnd((touch) => {
       if (!dragging) return;
       dragging = false;
       if (touch.y < PANEL_Y - 10) {
